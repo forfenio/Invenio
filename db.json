@@ -1,0 +1,22 @@
+{
+  "customers": [
+    {
+      "id": 0,
+      "userName": "Customer1"
+    }
+  ],
+  "barberShops": [
+    {
+      "id": 0,
+      "userName": "barberShop1"
+    }
+  ],
+  "freelanceBarbers": [
+    {
+      "id": 0,
+      "userName": "freelanceBarber1"
+    }
+  ]
+
+  
+}

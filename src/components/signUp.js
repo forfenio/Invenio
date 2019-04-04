@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { SegmentedControl } from 'segmented-control'
 
-import './App.scss';
 
-import SignUp from './components/signUp';
+import '../App.scss';
 
-function App()   {
+function SignUp()   {
 
+  const [type, setType] = useState("");
   const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   
     
     return (
-      <div className="App">
-        <img src={require("./logo.png")} alt={"invenio-logo"} />
-        <p>Pronađi najboljeg i najpovoljnijeg frizera u blizini.</p>
+      <div className="sign-up">
+        
         <form>
+
+          <SegmentedControl
+            name="friDefault"
+            options={[
+                { label: "FRIZER", value: "frizer", default: true },
+                { label: "KLIJENT", value: "klijent" }
+            ]}
+            onChange={newValue => setType(newValue)}
+          />
           <input
             type="text"
             value={email}
@@ -32,21 +41,11 @@ function App()   {
             name="password"
             required
           />
-          <button>PRIJAVA</button>
+          <button>REGISTRACIJA</button>
         </form>
-        <div>
-          <span>
-            Izradi <Link to="/signup">Novi račun</Link>
-          </span>
-          <span>
-            Zaboravljena <a>lozinka</a>?
-          </span>
-        </div>
-        
       </div>
-      
     );
   }
 
 
-export default App;
+export default SignUp;
