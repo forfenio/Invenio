@@ -9,8 +9,6 @@ body {
 
 .App {
     position:absolute;
-    top:0;
-    bottom:0;
     left:0;
     right:0;
     overflow:hidden;
@@ -127,4 +125,67 @@ body {
           }
       }
   }
+}
+
+.sign-up {
+    position:absolute;
+    
+    left:0;
+    right:0;
+    overflow:hidden;
+    background: url(./background.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: 100% 100%;
+    form {
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+
+        input {
+            margin: 0 0 2rem 0;
+            background-color:rgba(218, 212, 212, 0.27);
+            outline: none;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            color: white;
+            border: none;
+            border: 1px solid transparent;
+            box-shadow: 0 0 3px white;
+            
+            background-repeat: no-repeat;
+            background-size: 1.5rem;
+            background-position: 5% 50%;
+            transition: border 200ms ease-in-out;
+        }
+
+        input:focus {
+            border: 1px solid white;
+        }
+    
+        input::placeholder {
+            color: rgb(212, 212, 212);
+        }
+        
+        button {
+            margin: 0 0 2rem 0;
+            background-color: rgba(76, 179, 55, 0.67);
+            outline: none;
+            border-radius: 25px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 1rem 0.5rem;
+        }
+        button:hover {
+            background-color: rgba(76, 249, 0, 0.6);
+        }
+    }
+    @media screen and (max-width: 991px){
+        form {
+            width: 95%;
+        }
+    }
 }

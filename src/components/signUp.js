@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SegmentedControl } from 'segmented-control'
+
+
+import SignUpChild from './signUpChild';
 
 
 import '../App.scss';
 
 function SignUp()   {
 
-  const [type, setType] = useState("");
-  const [email, setEmail] = useState("");
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  
+    const [type, setType] = useState("");
+
+
+    // useEffect(() => {
+    //   console.log(type);
+    // });
     
     return (
       <div className="sign-up">
         
-        <form>
+        
 
           <SegmentedControl
             name="friDefault"
@@ -23,26 +27,13 @@ function SignUp()   {
                 { label: "FRIZER", value: "frizer", default: true },
                 { label: "KLIJENT", value: "klijent" }
             ]}
-            onChange={newValue => setType(newValue)}
+            setValue={e => setType(e)}
+            value={type}
+            style={{ width: '95%', color: '#0ca81b', borderRadius: 25, display: 'block' }}
           />
-          <input
-            type="text"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="E-mail address"
-            name="email"
-            required
-          />
-          <input
-            type="text"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            placeholder="Password"
-            name="password"
-            required
-          />
-          <button>REGISTRACIJA</button>
-        </form>
+        
+          <SignUpChild type={type}/>  
+        
       </div>
     );
   }
