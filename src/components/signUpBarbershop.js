@@ -11,12 +11,33 @@ function SignUpBarbershop()   {
   const [barbershopName, setBarbershopName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(barbershopName);
+
+    if (password === confirmPassword && password != "") { 
+
+      fetch('http://localhost:3000/barbershops', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userName: email,
+          password: password,
+        })
+      })
+    }
+  }
   
     
     return (
       
         
-        <form className="barbershop">
+        <form className="barbershop" onSubmit={handleSubmit}>
 
           <input
             type="text"
@@ -35,7 +56,7 @@ function SignUpBarbershop()   {
             required
           />
           <input
-            type="text"
+            type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
             placeholder="Lozinka"
@@ -43,14 +64,14 @@ function SignUpBarbershop()   {
             required
           />
           <input
-            type="text"
+            type="password"
             value={confirmPassword}
             onChange={e => setConfirmPassword(e.target.value)}
             placeholder="Potvrdi lozinku"
             name="confirmPassword"
             required
           />
-          <button>REGISTRACIJA</button>
+          <input type="submit" value="REGISTRACIJA" />
        
       </form>
     );

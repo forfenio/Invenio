@@ -91,7 +91,7 @@ body {
         background-image: url(./lock-solid.svg);
     }
     
-    button {
+    input[type=submit] {
         margin: 0 0 2rem 0;
         background-color: rgba(76, 179, 55, 0.67);
         outline: none;
@@ -101,7 +101,7 @@ body {
         cursor: pointer;
         padding: 1rem 0.5rem;
     }
-    button:hover {
+    input[type=submit]:hover {
         background-color: rgba(76, 249, 0, 0.6);
     }
   }
@@ -144,7 +144,8 @@ body {
         flex-direction: column;
         width: 20%;
 
-        input {
+        input[type=text],
+        input[type=password] {
             margin: 0 0 2rem 0;
             background-color:rgba(218, 212, 212, 0.27);
             outline: none;
@@ -161,15 +162,17 @@ body {
             transition: border 200ms ease-in-out;
         }
 
-        input:focus {
+        input[type=text]:focus,
+        input[type=password]:focus {
             border: 1px solid white;
         }
     
-        input::placeholder {
+        input[type=text]::placeholder,
+        input[type=password]::placeholder {
             color: rgb(212, 212, 212);
         }
         
-        button {
+        input[type=submit] {
             margin: 0 0 2rem 0;
             background-color: rgba(76, 179, 55, 0.67);
             outline: none;
@@ -179,7 +182,7 @@ body {
             cursor: pointer;
             padding: 1rem 0.5rem;
         }
-        button:hover {
+        input[type=submit]:hover {
             background-color: rgba(76, 249, 0, 0.6);
         }
     }

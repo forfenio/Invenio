@@ -44,7 +44,7 @@ function SignUpCustomer()   {
             required
           />
           <input
-            type="text"
+            type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
             placeholder="Lozinka"
@@ -52,14 +52,14 @@ function SignUpCustomer()   {
             required
           />
           <input
-            type="text"
+            type="password"
             value={confirmPassword}
             onChange={e => setConfirmPassword(e.target.value)}
             placeholder="Potvrdi lozinku"
             name="confirmPassword"
             required
           />
-          <button>REGISTRACIJA</button>
+          <input type="submit" value="REGISTRACIJA" />
        
       </form>
     );

@@ -5,10 +5,15 @@
       "userName": "Customer1"
     }
   ],
-  "barberShops": [
+  "barberShops": [ 
     {
       "id": 0,
       "userName": "barberShop1"
+    },
+    {
+      "userName": "ja@gmail.com",
+      "password": "asdfg",
+      "id": 1
     }
   ],
   "freelanceBarbers": [
@@ -17,6 +22,4 @@
       "userName": "freelanceBarber1"
     }
   ]
-
-  
 }
