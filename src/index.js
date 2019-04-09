@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import SignUp from './components/signUp'
-import NotFound from './components/notFound'
+import Home from './components/home';
+import NotFound from './components/notFound';
 import * as serviceWorker from './serviceWorker';
-import { Route, NavLink, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 const routing = (
     <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" render={props => <App {...props}/>} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/home" render={props => <Home {...props} />} />
             <Route component={NotFound} />
           </Switch>
         </div>

@@ -17,7 +17,7 @@ function SignUpBarbershop()   {
     console.log(email);
     console.log(barbershopName);
 
-    if (password === confirmPassword && password != "") { 
+    if (password === confirmPassword && password !== "") { 
 
       fetch('http://localhost:3000/barbershops', {
         method: 'POST',

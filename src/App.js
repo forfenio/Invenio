@@ -1,44 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './App.scss';
 
-import SignUp from './components/signUp';
 
 
 
-function App()   {
+
+function App(props)   {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fetchedCustomers, setFetchedCustomers] = useState([]);
-  const [fetchedBarbershops, setFetchedBarbershops] = useState([]);
+  // const [fetchedCustomers, setFetchedCustomers] = useState([]);
+  // const [fetchedBarbershops, setFetchedBarbershops] = useState([]);
+  
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/barbershops')
+  //     .then(response => response.json())
+  //     .then(data => setFetchedBarbershops(data));
 
-  useEffect(() => {
-    fetch('http://localhost:3000/barbershops')
-      .then(response => response.json())
-      .then(data => setFetchedBarbershops(data));
-  });
+  //   // fetch('http://localhost:3000/customers')
+  //   //   .then(response => response.json())
+  //   //   .then(data => setFetchedCustomers(data));
 
-  const handleSubmit = (e) => {
+  // });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(password);
 
-    console.log(checkUser(fetchedBarbershops, email, password));
+    const barbershops = await (await fetch('http://localhost:3000/barbershops')).json();
+    const customers = await (await fetch('http://localhost:3000/customers')).json();
+    
+      // fetch('http://localhost:3000/barbershops')
+      // .then(response => response.json())
+      // .then(data => setFetchedBarbershops(data))
+    
 
-    if (checkUser(fetchedBarbershops, email, password)) {
-      console.log("loggedin");
-    } else {
-      console.log("fail");
-    }
-
-    console.log(fetchedBarbershops);
-
-   
+    console.log(customers);
+    console.log(barbershops);
+    // console.log(password);
+    // checkUser(barbershops, email, password);
+    
+    console.log(checkUser(barbershops, email, password));
 
     
+    if(checkUser(barbershops, email, password) || checkUser(customers, email, password)) {
+      props.history.replace('/home');
+    }
+
+    // console.log(fetchedBarbershops);
+    
   }
+
+//return <Redirect to='/home' />
+
+
   
     
     return (
@@ -76,7 +92,19 @@ function App()   {
       </div>
       
     );
-}
+} 
+
+// function useFetchBarbershops () {
+//   const [fetchedBarbershops, setFetchedBarbershops] = useState([]);
+
+//   useEffect(() => {
+    
+//   })
+  
+
+//   return fetchedBarbershops;
+      
+// }
 
 
 function checkUser(arr, email, password) {
@@ -84,5 +112,7 @@ function checkUser(arr, email, password) {
     return el.userName === email && el.password === password
   })
 }
+
+
 
 export default App;

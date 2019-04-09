@@ -12,12 +12,39 @@ function SignUpCustomer()   {
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(firstName);
+    console.log(lastName);
+    console.log(password);
+    console.log(confirmPassword);
+
+    if (password === confirmPassword && password !== "") { 
+
+      fetch('http://localhost:3000/customers', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userName: email,
+          firstName: firstName,
+          lastName: lastName,
+          password: password
+        })
+      })
+    }
+  }
   
     
     return (
       
         
-        <form className="customer">
+        <form className="customer" onSubmit={handleSubmit}>
 
           <input
             type="text"

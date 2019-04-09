@@ -3,9 +3,16 @@
     {
       "id": 0,
       "userName": "Customer1"
+    },
+    {
+      "userName": "at@mail.com",
+      "firstName": "asdfg",
+      "lastName": "gfdsa",
+      "password": "kosa",
+      "id": 1
     }
   ],
-  "barberShops": [ 
+  "barberShops": [
     {
       "id": 0,
       "userName": "barberShop1"
