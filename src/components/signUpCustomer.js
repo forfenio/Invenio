@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
-
+import ReactModal from 'react-modal';
 
 import '../App.scss';
+
+ReactModal.setAppElement(document.getElementById('root'));
 
 function SignUpCustomer()   {
 
@@ -12,32 +13,60 @@ function SignUpCustomer()   {
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [modalText, setModalText] = useState("");
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const customers = await (await fetch('http://localhost:3000/customers')).json();
     console.log(email);
     console.log(firstName);
     console.log(lastName);
     console.log(password);
     console.log(confirmPassword);
 
-    if (password === confirmPassword && password !== "") { 
-
-      fetch('http://localhost:3000/customers', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userName: email,
-          firstName: firstName,
-          lastName: lastName,
-          password: password
-        })
-      })
+    if (!checkUser(customers, email) && password === confirmPassword) {
+      await fetch('http://localhost:3000/customers', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userName: email,
+              firstName: firstName,
+              lastName: lastName,
+              password: password
+            })
+      }).then(() => setModalText("Your account has been created successfully."))
+        .catch(() => setModalText("Check your internet connection."))
+      modalToggle();
+    } else {
+        let mText = checkUser(customers, email) ? "Email is already in use." : "Password does not match.";
+        setModalText(mText);
+        modalToggle();
     }
+  }
+
+  const modalToggle = () => {
+    setShowModal(!showModal);
+  }
+  
+  const contentStyle = {
+    position: 'absolute',
+    left: '7vw',
+    textAlign: 'center',
+    right: '7vw',
+    width: '30vw',
+    margin: '0 auto',
+    border: 'none',
+    background: 'moccasin',
+    overflow: 'auto',
+    borderRadius: '4px',
+    bottom: 'unset',
+    outline: 'none',
+    padding: '35px',
   }
   
     
@@ -87,10 +116,23 @@ function SignUpCustomer()   {
             required
           />
           <input type="submit" value="REGISTRACIJA" />
+          <ReactModal
+            isOpen={showModal}
+            closeTimeoutMS={200}
+            style={{content: contentStyle}}
+          >
+            <div>{modalText}</div>
+            <button onClick={modalToggle} className="modal-button">OK</button>
+          </ReactModal>
        
       </form>
     );
   }
 
+function checkUser(arr, email) {
+  return arr.some(el => {
+    return el.userName === email
+  })
+}
 
 export default SignUpCustomer;

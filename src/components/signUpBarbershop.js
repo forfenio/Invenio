@@ -1,36 +1,45 @@
 import React, { useState } from 'react';
-
-
+import ReactModal from 'react-modal';
 
 import '../App.scss';
 
-function SignUpBarbershop()   {
+ReactModal.setAppElement(document.getElementById('root'));
+
+function SignUpBarbershop() {
 
   
   const [email, setEmail] = useState("");
   const [barbershopName, setBarbershopName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [modalText, setModalText] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+    const barbershops = await (await fetch('http://localhost:3000/barbershops')).json();
     console.log(email);
     console.log(barbershopName);
 
-    if (password === confirmPassword && password !== "") { 
+    if (!checkUser(barbershops, email) && password === confirmPassword) { 
 
-      fetch('http://localhost:3000/barbershops', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userName: email,
-          password: password,
-        })
-      })
+      await fetch('http://localhost:3000/barbershops', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userName: email,
+              barbershopName: barbershopName,
+              password: password,
+            })
+          })
     }
+  }
+
+  const modalToggle = () => {
+    setShowModal(!showModal);
   }
   
     
@@ -72,10 +81,23 @@ function SignUpBarbershop()   {
             required
           />
           <input type="submit" value="REGISTRACIJA" />
+          <ReactModal
+            isOpen={showModal}
+            closeTimeoutMS={200}
+            style={{content: contentStyle}}
+          >
+            <div>{modalText}</div>
+            <button onClick={modalToggle} className="modal-button">OK</button>
+          </ReactModal>
        
       </form>
     );
-  }
+}
 
+function checkUser(arr, email) {
+  return arr.some(el => {
+    return el.userName === email
+  })
+}
 
 export default SignUpBarbershop;

@@ -1,61 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ReactModal from 'react-modal'
 
 import './App.scss';
 
-
-
-
+ReactModal.setAppElement(document.getElementById('root'));
 
 function App(props)   {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
   // const [fetchedCustomers, setFetchedCustomers] = useState([]);
   // const [fetchedBarbershops, setFetchedBarbershops] = useState([]);
   
   // useEffect(() => {
-  //   fetch('http://localhost:3000/barbershops')
-  //     .then(response => response.json())
-  //     .then(data => setFetchedBarbershops(data));
-
-  //   // fetch('http://localhost:3000/customers')
-  //   //   .then(response => response.json())
-  //   //   .then(data => setFetchedCustomers(data));
-
+ 
   // });
+
+  const modalToggle = () => {
+    setShowModal(!showModal);
+  }
+
+  const contentStyle = {
+    position: 'absolute',
+    left: '7vw',
+    textAlign: 'center',
+    right: '7vw',
+    width: '30vw',
+    margin: '0 auto',
+    border: 'none',
+    background: 'moccasin',
+    overflow: 'auto',
+    borderRadius: '4px',
+    bottom: 'unset',
+    outline: 'none',
+    padding: '35px',
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const barbershops = await (await fetch('http://localhost:3000/barbershops')).json();
     const customers = await (await fetch('http://localhost:3000/customers')).json();
-    
-      // fetch('http://localhost:3000/barbershops')
-      // .then(response => response.json())
-      // .then(data => setFetchedBarbershops(data))
-    
 
-    console.log(customers);
-    console.log(barbershops);
+    // console.log(customers);
+    // console.log(barbershops);
     // console.log(password);
     // checkUser(barbershops, email, password);
     
-    console.log(checkUser(barbershops, email, password));
-
+    // console.log(checkUser(barbershops, email, password));
     
     if(checkUser(barbershops, email, password) || checkUser(customers, email, password)) {
       props.history.replace('/home');
+    } else {
+      modalToggle();
     }
 
-    // console.log(fetchedBarbershops);
-    
   }
-
-//return <Redirect to='/home' />
-
-
-  
     
     return (
       <div className="App">
@@ -80,6 +83,14 @@ function App(props)   {
           />
           <input type="submit" value="PRIJAVA" />
         </form>
+        <ReactModal
+          isOpen={showModal}
+          closeTimeoutMS={200}
+          style={{content: contentStyle}}
+        >
+          <div>Please enter valid email and password.</div>
+          <button onClick={modalToggle} className="modal-button">OK</button>
+        </ReactModal>
         <div>
           <span>
             Izradi <Link to="/signup">Novi račun</Link>
@@ -94,25 +105,10 @@ function App(props)   {
     );
 } 
 
-// function useFetchBarbershops () {
-//   const [fetchedBarbershops, setFetchedBarbershops] = useState([]);
-
-//   useEffect(() => {
-    
-//   })
-  
-
-//   return fetchedBarbershops;
-      
-// }
-
-
 function checkUser(arr, email, password) {
   return arr.some(el => {
     return el.userName === email && el.password === password
   })
 }
-
-
 
 export default App;

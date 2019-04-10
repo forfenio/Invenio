@@ -7,6 +7,38 @@ body {
     height: 100%;
 }
 
+.ReactModal__Content.ReactModal__Content--after-open button {
+    margin-top: 1rem;
+}
+  
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+  
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+  
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}
+
+.modal-button {
+    margin: 0;
+    background-color: rgba(76, 179, 55, 0.67);
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+}
+
+.modal-button:hover {
+    background-color: rgba(76, 199, 0, 0.6);
+}
+
 .App {
     position:absolute;
     left:0;
@@ -67,7 +99,6 @@ body {
         color: white;
         border: none;
         border: 1px solid transparent;
-        box-shadow: 0 0 3px white;
         
         background-repeat: no-repeat;
         background-size: 1.5rem;
@@ -156,7 +187,6 @@ body {
             color: white;
             border: none;
             border: 1px solid transparent;
-            box-shadow: 0 0 3px white;
             
             background-repeat: no-repeat;
             background-size: 1.5rem;

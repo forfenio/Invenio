@@ -10,6 +10,20 @@
       "lastName": "gfdsa",
       "password": "kosa",
       "id": 1
+    },
+    {
+      "userName": "Customer1",
+      "firstName": "Cust",
+      "lastName": "omer",
+      "password": "asdfg",
+      "id": 2
+    },
+    {
+      "userName": "qwer@mail.com",
+      "firstName": "asdfg",
+      "lastName": "asdfg",
+      "password": "mok",
+      "id": 3
     }
   ],
   "barberShops": [
@@ -21,6 +35,11 @@
       "userName": "ja@gmail.com",
       "password": "asdfg",
       "id": 1
+    },
+    {
+      "userName": "asd@mail.com",
+      "password": "qwert",
+      "id": 2
     }
   ],
   "freelanceBarbers": [
