@@ -20,11 +20,11 @@ function SignUpCustomer()   {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const customers = await (await fetch('http://localhost:3000/customers')).json();
-    console.log(email);
-    console.log(firstName);
-    console.log(lastName);
-    console.log(password);
-    console.log(confirmPassword);
+    // console.log(email);
+    // console.log(firstName);
+    // console.log(lastName);
+    // console.log(password);
+    // console.log(confirmPassword);
 
     if (!checkUser(customers, email) && password === confirmPassword) {
       await fetch('http://localhost:3000/customers', {
@@ -39,7 +39,14 @@ function SignUpCustomer()   {
               lastName: lastName,
               password: password
             })
-      }).then(() => setModalText("Your account has been created successfully."))
+      }).then(() => {
+          setModalText("Your account has been created successfully.");
+          setEmail("");
+          setFirstName("");
+          setLastName("");
+          setPassword("");
+          setConfirmPassword("");
+        })
         .catch(() => setModalText("Check your internet connection."))
       modalToggle();
     } else {
@@ -76,7 +83,7 @@ function SignUpCustomer()   {
         <form className="customer" onSubmit={handleSubmit}>
 
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="E-mail address"

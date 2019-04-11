@@ -66,7 +66,7 @@ function App(props)   {
         <p>Pronađi najboljeg i najpovoljnijeg frizera u blizini.</p>
         <form onSubmit={handleSubmit}>
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="E-mail address"

@@ -21,9 +21,8 @@ function SignUpBarbershop() {
     console.log(email);
     console.log(barbershopName);
 
-    if (!checkUser(barbershops, email) && password === confirmPassword) { 
-
-      await fetch('http://localhost:3000/barbershops', {
+    if (!checkUser(barbershops, email) && password === confirmPassword) {
+       fetch('http://localhost:3000/barbershops', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -32,14 +31,43 @@ function SignUpBarbershop() {
             body: JSON.stringify({
               userName: email,
               barbershopName: barbershopName,
-              password: password,
+              password: password
             })
-          })
+      }).then(() => {
+          setModalText("Your account has been created successfully.")
+          setEmail("");
+          setBarbershopName("");
+          setPassword("");
+          setConfirmPassword("");
+        })
+        .catch(() => setModalText("Check your internet connection."))
+      modalToggle();
+      
+    } else {
+        let mText = checkUser(barbershops, email) ? "Email is already in use." : "Password does not match.";
+        setModalText(mText);
+        modalToggle();
     }
   }
 
   const modalToggle = () => {
     setShowModal(!showModal);
+  }
+
+  const contentStyle = {
+    position: 'absolute',
+    left: '7vw',
+    textAlign: 'center',
+    right: '7vw',
+    width: '30vw',
+    margin: '0 auto',
+    border: 'none',
+    background: 'moccasin',
+    overflow: 'auto',
+    borderRadius: '4px',
+    bottom: 'unset',
+    outline: 'none',
+    padding: '35px',
   }
   
     
@@ -49,7 +77,7 @@ function SignUpBarbershop() {
         <form className="barbershop" onSubmit={handleSubmit}>
 
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="E-mail address"

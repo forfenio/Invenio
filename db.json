@@ -24,6 +24,13 @@
       "lastName": "asdfg",
       "password": "mok",
       "id": 3
+    },
+    {
+      "userName": "qwer1@mail.com",
+      "firstName": "asdd",
+      "lastName": "asdfg",
+      "password": "asdfg",
+      "id": 4
     }
   ],
   "barberShops": [
@@ -40,6 +47,18 @@
       "userName": "asd@mail.com",
       "password": "qwert",
       "id": 2
+    },
+    {
+      "userName": "kosa@mail.com",
+      "barbershopName": "Kosa",
+      "password": "kosa",
+      "id": 3
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "barbershopName": "asdfg",
+      "password": "asdfg",
+      "id": 4
     }
   ],
   "freelanceBarbers": [
