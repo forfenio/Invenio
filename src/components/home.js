@@ -1,3 +1,21 @@
-import React from 'react'
-const Home = () => <h1>Home</h1>
-export default Home
+import React, { useState } from 'react';
+import Context from "./appProvider";
+
+
+
+function Home () {
+    return (
+
+        <Context.Consumer>
+        {({foo, baz}) => (
+            <div>
+                {foo}
+                {baz}
+            </div>
+        )}
+        </Context.Consumer>
+        
+    );
+}
+
+export default Home;

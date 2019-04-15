@@ -227,3 +227,34 @@ body {
         }
     }
 }
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+
+    a {
+        height: 53.91px;
+        background-repeat: no-repeat;
+        width: 32.53px;
+        
+        path {
+            fill: lightgrey;
+        }
+    }
+
+    .active-link {
+        path {
+            fill: lightgreen;
+        }
+    }
+
+    a:hover {
+        path:hover {
+            fill: lightgreen;
+        }
+    }
+
+    // 
+}
