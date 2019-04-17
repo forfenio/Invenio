@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function Profile () {
+function Profile (props) {
     return (
         <div>
             Profile
+            <p>{props.userName}</p>
+            <p>{props.password}</p>
         </div>
     );
 }

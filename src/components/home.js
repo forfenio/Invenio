@@ -1,20 +1,10 @@
-import React, { useState } from 'react';
-import Context from "./appProvider";
+import React from 'react';
 
 
 
 function Home () {
     return (
-
-        <Context.Consumer>
-        {({foo, baz}) => (
-            <div>
-                {foo}
-                {baz}
-            </div>
-        )}
-        </Context.Consumer>
-        
+        <div>Home</div>
     );
 }
 

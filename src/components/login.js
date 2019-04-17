@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ReactModal from 'react-modal'
+import ReactModal from 'react-modal';
+import { connect } from 'react-redux';
 
 import '../App.scss';
 
@@ -34,6 +35,8 @@ function Login(props)   {
     padding: '35px',
   }
 
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -48,6 +51,12 @@ function Login(props)   {
     // console.log(checkUser(barbershops, email, password));
     
     if(checkUser(barbershops, email, password) || checkUser(customers, email, password)) {
+      customers.map(customer => {
+        if (customer.userName === email) {
+          props.setUserData(customer);
+        }
+        return null;
+      })
       props.history.replace('/app/home');
     } else {
       modalToggle();
@@ -91,7 +100,7 @@ function Login(props)   {
             Izradi <Link to="/signup">Novi račun</Link>
           </span>
           <span>
-            Zaboravljena <a>lozinka</a>?
+            Zaboravljena <a href="#">lozinka</a>?
           </span>
         </div>
         
@@ -106,4 +115,16 @@ function checkUser(arr, email, password) {
   })
 }
 
-export default Login;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUserData: (userData) => {
+      dispatch({
+        type: 'LOGIN',
+        user: userData
+      })
+    }
+  }
+}
+
+export default connect(null ,mapDispatchToProps)(Login);

@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ReactModal from 'react-modal'
-import Login from './components/login';
+import React, {  useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import ReactModal from 'react-modal'
+// import Login from './components/login';
 
 import './App.scss';
 
 
 function App(props)   {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showModal, setShowModal] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     props.history.push("/login");
