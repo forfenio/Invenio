@@ -31,6 +31,13 @@
       "lastName": "asdfg",
       "password": "asdfg",
       "id": 4
+    },
+    {
+      "userName": "juer@mail.com",
+      "firstName": "jure",
+      "lastName": "grgic",
+      "password": "jure123",
+      "id": 5
     }
   ],
   "barberShops": [
@@ -59,6 +66,71 @@
       "barbershopName": "asdfg",
       "password": "asdfg",
       "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
+    },
+    {
+      "userName": "kosa1@mail.com",
+      "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+      "description": "Najbolje sisanje ikad u salonu zleki",
+      "likes": 125,
+      "comments": ["vrh", "dobra frizura"]
     }
   ],
   "freelanceBarbers": [
