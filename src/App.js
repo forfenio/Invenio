@@ -1,4 +1,4 @@
-import React, {  useEffect } from 'react';
+import {  useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 // import ReactModal from 'react-modal'
 // import Login from './components/login';
