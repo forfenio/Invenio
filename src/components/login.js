@@ -54,7 +54,6 @@ function Login(props)   {
       customers.map(customer => {
         if (customer.userName === email) {
           props.setUserData(customer);
-          console.log(customer);
         }
         return null;
       })
