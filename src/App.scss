@@ -272,6 +272,30 @@ body, #root {
     margin: 0 auto 3rem;
     width: 100%;
 
+    
+
+    div {
+        margin: 1rem 0 0 0;
+
+        input {
+            display: block;
+            border-radius: 25%;
+            margin: 0 auto;
+
+            background-color:rgba(218, 212, 212, 0.27);
+            outline: none;
+            border-radius: 25px;
+            padding: 0.5rem 3rem;
+            border: none;
+            border: 1px solid transparent;
+            background-image: url(./search-solid.svg);
+            background-repeat: no-repeat;
+            background-size: 1.5rem;
+            background-position: 5% 50%;
+            transition: border 200ms ease-in-out;
+        }
+    }
+
     .post {
         display: flex;
         flex-direction: row;
@@ -343,8 +367,8 @@ body, #root {
 
        span {
 
-           img[alt=like],
-           img[alt=arrow-back] {
+           img[alt=settings],
+           img[alt=new-post] {
                height: 3rem;
            }
        }
@@ -362,6 +386,17 @@ body, #root {
         }
         img:nth-child(3n+2) {
             margin: 1px 2px;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .posts {
+            margin: 0 auto;
+            width: 50%;
+
+            img {
+                height: calc(100% / 3.04);
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Post from './post'
 
 function Home () {
+    const [searchInput, setSearchInput] = useState("");
     const [fetchedPosts, setFetchedPosts] = useState([]);
 
     useEffect(() => {
@@ -11,10 +12,24 @@ function Home () {
         }
         fetchPosts();
     }, [])
+
+    const filteredItems = fetchedPosts.filter(post => {
+        return post.userName.toLowerCase().includes(searchInput.toLowerCase());
+    })
+
     return (
         <div className="home">
+            <div>
+                <input
+                    type="text"
+                    placeholder="Pretražite frizere"
+                    name="search"
+                    value={searchInput}
+                    onChange={e => setSearchInput(e.target.value)}
+                />
+            </div>
             {
-                fetchedPosts.map((post, index) => (
+                filteredItems.map((post, index) => (
                         <Post {...post} key={index} />
                 ))
             }
