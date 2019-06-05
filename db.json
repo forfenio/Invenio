@@ -11,7 +11,19 @@
       "lastName": "gfdsa",
       "password": "kosa",
       "id": 1,
-      "postImgs": ["https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg"]
+      "postImgs": [
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
+        "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg"
+      ]
     },
     {
       "userName": "Customer1",
@@ -65,67 +77,124 @@
   ],
   "posts": [
     {
+      "id": 1,
       "userName": "kosa1@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
-      "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likes": 126,
+      "likedBy": [
+        1,
+        1,
+        1
+      ],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 2,
       "userName": "ja@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
       "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likedBy": [],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 3,
       "userName": "asd@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
-      "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likes": 126,
+      "likedBy": [
+        1
+      ],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 4,
       "userName": "kosa@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
-      "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likes": 126,
+      "likedBy": [
+        1
+      ],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 5,
       "userName": "qwer@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
-      "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likes": 126,
+      "likedBy": [
+        1
+      ],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 6,
       "userName": "salon@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
-      "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likes": 126,
+      "likedBy": [
+        1
+      ],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 7,
       "userName": "kosa1@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
       "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likedBy": [],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 8,
       "userName": "kosa1@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
       "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likedBy": [],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     },
     {
+      "id": 9,
       "userName": "kosa1@mail.com",
       "picture": "https://s3-media4.fl.yelpcdn.com/bphoto/d5jrXTgjiCKDTLS5sqWJgw/o.jpg",
       "description": "Najbolje sisanje ikad u salonu zleki",
       "likes": 125,
-      "comments": ["vrh", "dobra frizura"]
+      "likedBy": [],
+      "comments": [
+        "vrh",
+        "dobra frizura"
+      ]
     }
   ],
   "freelanceBarbers": [

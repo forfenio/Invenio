@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Post from './post'
 
-function Home () {
+function Home (props) {
     const [searchInput, setSearchInput] = useState("");
     const [fetchedPosts, setFetchedPosts] = useState([]);
 
@@ -30,7 +30,7 @@ function Home () {
             </div>
             {
                 filteredItems.map((post, index) => (
-                        <Post {...post} key={index} />
+                        <Post post={{...post}} userProps={{...props}} key={index} />
                 ))
             }
         </div>

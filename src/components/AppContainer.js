@@ -11,7 +11,7 @@ function AppContainer (props) {
     
     return (
         <Router>
-            <Route exact path="/app/home" component={Home} />
+            <Route exact path="/app/home" render={() => <Home {...props}/>} />
             <Route path="/app/chat" component={Chat} />
             <Route path="/app/camera" component={Camera} />
             <Route path="/app/schedule" component={Schedule} />
@@ -32,7 +32,8 @@ function AppContainer (props) {
 const mapStateToProps = state => ({
     userName: state.userName,
     password: state.password,
-    postImgs: state.postImgs
+    postImgs: state.postImgs,
+    id: state.id
 })
 
 export default connect(mapStateToProps)(AppContainer);

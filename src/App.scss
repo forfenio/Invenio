@@ -336,6 +336,21 @@ body, #root {
                 }
             }
 
+            .liked {
+                &:before {
+                    display: inline-block;
+                    position: relative;
+                    top: 1px;
+                    height: 15px;
+                    margin: 0 2px 0 0;
+                    width: 15px;
+                    content: "";
+                    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png");
+                    background-size: 100%;
+                    background-repeat: no-repeat;  
+                }
+            }
+
             .comments {
                 margin: 0 0 0 0.5rem;
                 &:before {
@@ -352,6 +367,45 @@ body, #root {
             }
         }
     }
+}
+
+.camera {
+    background-color: black;
+
+    .close-button {
+        background-image: url(./times-solid.svg);
+        background-repeat: no-repeat;
+        position: fixed;
+        left: 31.5%;
+        top: 2%;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
+    
+    #outer-circle, #inner-circle {
+        cursor: pointer;
+    }
+    // .capture-button {
+    //     background-color: darkred;
+    //     border-radius: 100%;
+    //     border: none;
+    //     height: 40px;
+    //     width: 40px;
+    //     margin: 0 auto 1rem;
+    //     display: block;
+    //     outline: none;
+    //     position: relative;
+    //     bottom: 4rem;
+    // }
+
+    // .capture-button:hover {
+    //     background-color: #cc0000;
+    // }
+
+    // .capture-button:focus {
+    //     background-color: red;
+    // }
 }
 
 .profile {
