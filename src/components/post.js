@@ -7,6 +7,8 @@ function Post (props) {
     const [numberOfLikes, setNumberOfLikes] = useState(props.post.likes);
 
     const likeFunction = async () => {
+        setLike(!like);
+        setNumberOfLikes(numberOfLikes+1);
         await fetch('http://localhost:3000/posts/'+props.post.id, {
             method: 'PATCH',
             headers: { 
@@ -19,11 +21,12 @@ function Post (props) {
             })
         });
 
-        setLike(!like);
-        setNumberOfLikes(numberOfLikes+1);
+        
     }
 
     const dislikeFunction = async () => {
+        setLike(!like);
+        setNumberOfLikes(numberOfLikes-1);
         await fetch('http://localhost:3000/posts/'+props.post.id, {
             method: 'PATCH',
             headers: {
@@ -32,11 +35,10 @@ function Post (props) {
             },
             body: JSON.stringify({
                 likes: numberOfLikes - 1,
-                likedBy: props.post.likedBy.filter((value) => value !== props.userProps.id)
+                likedBy: [...new Set(props.post.likedBy.filter((value) => value !== props.userProps.id))]
             })
         });
-        setLike(!like);
-        setNumberOfLikes(numberOfLikes-1);
+        
     }
 
     return (
